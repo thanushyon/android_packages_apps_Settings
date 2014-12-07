@@ -14,11 +14,19 @@
      limitations under the License.
 -->
 
+     <!-- Wakelock blocker -->
+
+
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/performance_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="wakelock_blocker"
+        android:fragment="com.android.settings.WakeLockBlocker"
+        android:title="@string/wakelock_blocker_title" />
+    
     <PreferenceCategory
         android:key="perf_profile_prefs"
         android:title="@string/performance_settings_title">
@@ -54,5 +62,6 @@
             android:title="@string/pref_force_highend_gfx_title"
             android:summary="@string/pref_force_highend_gfx_summary" />
     </PreferenceCategory>
+
 
 </PreferenceScreen>
