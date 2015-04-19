@@ -45,7 +45,6 @@ import android.preference.PreferenceScreen;
 import android.preference.SeekBarVolumizer;
 import android.preference.SwitchPreference;
 import android.preference.TwoStatePreference;
-import android.preference.ListPreference;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.provider.SearchIndexableResource;
