@@ -45,7 +45,6 @@ import android.preference.PreferenceScreen;
 import android.preference.SeekBarVolumizer;
 import android.preference.SwitchPreference;
 import android.preference.TwoStatePreference;
-import android.preference.ListPreference;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.provider.SearchIndexableResource;
@@ -65,8 +64,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-public class OtherSoundSettings extends SettingsPreferenceFragment implements Indexable,
-                Preference.OnPreferenceChangeListener {
+public class SoundSettings extends SettingsPreferenceFragment implements Indexable {
     private static final String TAG = SoundSettings.class.getSimpleName();
 
     private static final String KEY_SOUND = "sounds";
@@ -86,7 +84,6 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_INCREASING_RING_VOLUME = "increasing_ring_volume";
     private static final String KEY_VIBRATION_INTENSITY = "vibration_intensity";
     private static final String KEY_VIBRATE_ON_TOUCH = "vibrate_on_touch";
-    private static final String KEY_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
 
     private static final int SAMPLE_CUTOFF = 2000;  // manually cap sample playback at 2 seconds
 
@@ -123,20 +120,11 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
     private ComponentName mSuppressor;
     private int mRingerMode = -1;
     private SwitchPreference mVolumeLinkNotificationSwitch;
-    private ListPreference mAnnoyingNotifications;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
-
-
-        mAnnoyingNotifications = (ListPreference) findPreference(KEY_LESS_NOTIFICATION_SOUNDS);
-        int notificationThreshold = Settings.System.getInt(getContentResolver(),
-                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, 0);
-        updateAnnoyingNotificationValues();
-
-
         mPM = mContext.getPackageManager();
         mVoiceCapable = Utils.isVoiceCapable(mContext);
 
@@ -186,20 +174,6 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
         updateEffectsSuppressor();
     }
 
-
-    private void updateAnnoyingNotificationValues() {
-        int notificationThreshold = Settings.System.getInt(getContentResolver(),
-                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, 0);
-        if (mAnnoyingNotifications == null) {
-            mAnnoyingNotifications.setSummary(getString(R.string.less_notification_sounds_summary));
-        } else {
-            mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
-            mAnnoyingNotifications.setSummary(mAnnoyingNotifications.getEntry());
-            mAnnoyingNotifications.setOnPreferenceChangeListener(this);
-        }
-    }
-
-
     @Override
     public void onResume() {
         super.onResume();
@@ -222,19 +196,6 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
         mSettingsObserver.register(false);
         mReceiver.register(false);
     }
-
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        final String key = preference.getKey();
-        if (KEY_LESS_NOTIFICATION_SOUNDS.equals(key)) {
-            final int val = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
-            updateAnnoyingNotificationValues();
-        }
-        return true;
-    }
-
-
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
