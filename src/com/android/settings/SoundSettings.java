@@ -65,8 +65,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-public class SoundSettings extends SettingsPreferenceFragment implements Indexable,
-+                Preference.OnPreferenceChangeListener {
+public class OtherSoundSettings extends SettingsPreferenceFragment implements Indexable,
+                Preference.OnPreferenceChangeListener {
     private static final String TAG = SoundSettings.class.getSimpleName();
 
     private static final String KEY_SOUND = "sounds";
