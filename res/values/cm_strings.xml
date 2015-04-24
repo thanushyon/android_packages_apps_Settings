@@ -1191,7 +1191,6 @@
     <string name="battery_saver_summary">Reduce performance and limit background data</string>
     <string name="battery_saver_summary_unavailable">Not available while charging</string>
 
-<<<<<<< HEAD
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Notifications</string>
     <string name="less_notification_sounds_title">Less frequent notification sounds</string>
@@ -1206,7 +1205,7 @@
     <string name="less_notification_sounds_1m">1 minute</string>
     <string name="less_notification_sounds_2m">2 minutes</string>
     <string name="less_notification_sounds_5m">5 minutes</string>
-=======
+
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
     <string name="anonymous_statistics_title">CyanogenMod statistics</string>
@@ -1226,5 +1225,4 @@
     <string name="preview_version_title">Version</string>
     <string name="preview_country_title">Country</string>
     <string name="preview_carrier_title">Carrier</string>
->>>>>>> 6fc08e6a2188851d88a985dbcded71c33cc2f552
 </resources>
