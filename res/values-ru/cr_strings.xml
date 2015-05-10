@@ -457,11 +457,11 @@
     <string name="app_circle_bar_included_apps_title">Добавленные приложения</string>
     <string name="app_circle_bar_included_apps_summary">Приложения, отображаемые в круге</string>
     <string name="trigger_width_title">Ширина области вызова</string>
-    <string name="trigger_width_summary">Отрегулируйте ширину области вызова</string>
+    <string name="trigger_width_summary">Установите ширину области вызова</string>
     <string name="trigger_top_title">Позиция области вызова</string>
-    <string name="trigger_top_summary">Отрегулируйте вертикальную позицию области вызова</string>
-    <string name="trigger_bottom_title">Высота области</string>
-    <string name="trigger_bottom_summary">Отрегулируйте высоту области вызова</string>
+    <string name="trigger_top_summary">Установите вертикальное расположение области вызова</string>
+    <string name="trigger_bottom_title">Высота области вызова</string>
+    <string name="trigger_bottom_summary">Установите высоту области вызова</string>
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Уровни громкости</string>
@@ -885,13 +885,13 @@
     <string name="tab_position_summary">Отображение вкладки в верхней, средней или нижней части экрана</string>
     <string name="tab_size_title">Размер вкладки</string>
     <string name="tab_size_summary">Изменение размера видимой вкладки</string>
-    <string name="trigger_category">Область триггера</string>
-    <string name="trigger_width_title">Ширина триггера</string>
-    <string name="trigger_width_summary">Регулировка ширины области триггера</string>
-    <string name="trigger_top_title">Положение триггера</string>
-    <string name="trigger_top_summary">Регулировка вертикальной позиции области триггера</string>
-    <string name="trigger_bottom_title">Высота триггера</string>
-    <string name="trigger_bottom_summary">Регулировка высоты области триггера</string>
+    <string name="trigger_category">Область вызова</string>
+    <string name="trigger_width_title">Ширина области вызова</string>
+    <string name="trigger_width_summary">Установите ширину области вызова</string>
+    <string name="trigger_top_title">Позиция области вызова</string>
+    <string name="trigger_top_summary">Установите вертикальное расположение области вызова</string>
+    <string name="trigger_bottom_title">Высота области вызова</string>
+    <string name="trigger_bottom_summary">Установите высоту области вызова</string>
 
     <!-- Breathing Notifications -->
     <string name="breathing_notifications_title">\"Живые\" уведомления</string>
